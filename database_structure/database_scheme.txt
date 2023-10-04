@@ -1,0 +1,48 @@
+CREATE TABLE employees (
+    EMPLOYEE_ID INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    branch VARCHAR(50) NOT NULL,
+    position VARCHAR(50) NOT NULL,
+    manager_id INT
+);
+
+CREATE TABLE customers (
+    CUSTOMER_ID INT PRIMARY KEY AUTO_INCREMENT,
+    customer_name VARCHAR(50) NOT NULL,
+    customer_address VARCHAR(225) NOT NULL
+);
+
+CREATE TABLE products (
+    PRODUCT_ID CHAR(7) PRIMARY KEY,
+    product_name VARCHAR(50) UNIQUE NOT NULL,
+    product_price DECIMAL(11,2) NOT NULL,
+    quantity_available INT NOT NULL
+);
+
+CREATE TABLE orders (
+    RECEIPT_NO INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT NOT NULL,
+    employee_id INT NOT NULL,
+    product_id CHAR(7) NOT NULL,
+    order_quantity INT NOT NULL,
+    order_price DECIMAL(13,2) NOT NULL,
+    order_description VARCHAR(50),
+    order_registration_date DATETIME NOT NULL,
+    order_payment_deadline DATE NOT NULL,
+    order_shipment_deadline DATE NOT NULL,
+    order_status ENUM('AWAITING PAYMENT', 'AWAITING SHIPMENT', 'COMPLETED', 'CANCELLED'),
+    CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    CONSTRAINT fk_employee_id FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+    CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+CREATE TABLE sessions (
+    LOGIN_TOKEN CHAR(20) PRIMARY KEY,
+    user_id INT UNIQUE,
+    expiration_datetime DATETIME,
+    CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES employees(employee_id)
+);

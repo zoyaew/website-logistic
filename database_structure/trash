@@ -1,0 +1,21 @@
+page no 1
+pagination size 25
+
+1 -> 0 (page no-1)*pagination size
+2 -> 25
+3 -> 50
+4 -> 75
+
+customer_name, show
+product_name, hide
+order_description, hide
+shipment_deadline_from, 2023-09-20
+shipment_deadline_to, 2023-10-03
+payment_deadline_from, 2023-10-12
+payment_deadline_to,
+status_2, AWAITING SHIPMENT
+status_3, COMPLETED
+pagination_size, 60
+customer_id, 25
+product_code, KL12ABC
+filter, Filter

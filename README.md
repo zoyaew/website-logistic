@@ -3,16 +3,18 @@
 
 Sales Administration Portal is a website developed using HTML and PHP. It is hosted by XAMPP web server using Apache and MySQL.
 
-Currently, there are 5 main pages on the website:
+------------
 
- - [index.php]()
+#### Currently, there are 5 main pages on the website:
+
+ - [index.php](https://github.com/zoyaew/website-logistic/blob/main/code/index.php)
  
  A simple user login portal with two fields: username and password. User can choose whether to log-in using their username or email.
  
  All fields are sanitized and compared to the existing users in the database.
  After verified, user may log in. Session will start and a randomly generated session token with expiration time will be stored in the database.
  
-- [home.php]()
+- [home.php](https://github.com/zoyaew/website-logistic/blob/main/code/home.php)
 
  Home page shows sales transaction history of the current user (we assume the user is a salesman).
  
@@ -29,7 +31,7 @@ Currently, there are 5 main pages on the website:
  
  Once the filter is activated, a table will display the table data. The number of records matching the filters will be shown at the bottom of the page, as well as two buttons: "<", ">" which corresponds to showing the previous and the next page of the table data respectively.
 
-- [update_order.php]()
+- [update_order.php](https://github.com/zoyaew/website-logistic/blob/main/code/update_order.php)
 
  On this page, user can update the order status of a transaction record.
  
@@ -40,7 +42,7 @@ Currently, there are 5 main pages on the website:
  
 After submitting the status change, user may refer to the home page to see the updated status.
 
-- [new_order.php]()
+- [new_order.php](https://github.com/zoyaew/website-logistic/blob/main/code/new_order.php)
  
  Everything related to making new records will be on this page.
  
@@ -56,7 +58,7 @@ After submitting the status change, user may refer to the home page to see the u
    
    Once all the fields are inputted, the fields will be shown once more alongside the calculated total price to be confirmed. Two buttons will appear: &quot;cancel new transaction&quot; and &quot;submit new transaction&quot;; to which, user can choose whether to cancel or submit the new order.
  
-- [profile.php]()
+- [profile.php](https://github.com/zoyaew/website-logistic/blob/main/code/profile.php)
 
   This page shows the personal information of the current user by utilising a session to save the employee ID.
   Through the ID, it then queried the employee table database to show the first name, last name, username, email, branch, position, and manager name of the user.
@@ -64,3 +66,14 @@ After submitting the status change, user may refer to the home page to see the u
   There is a button to change user&apos;s password. Once clicked, two fields will appear: &quot;New Password&quot; and &quot;Confirm Password&quot;. If the same inputs to both fields are submitted, the password will be changed.
   
   User can try to log-out and re-log-in to check the updated password. Once logged out, the session and the saved session token in the database will be destroyed.
+  
+  
+
+------------
+
+#### Extras:
+
+- Check out the database scheme [here](https://github.com/zoyaew/website-logistic/blob/main/database_structure/database_scheme.txt)
+- Check out the showcase video on youtube [here](https://youtu.be/Laq7NwCrB84)
+
+------------
